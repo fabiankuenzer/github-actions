@@ -2,10 +2,17 @@ name: 'Hello World'
 on: push
 
 jobs:
-  run:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - run: npm install --global mocha
+      - run: mocha test.js
+  run:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
       - run: node index.js
-
