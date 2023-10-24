@@ -9,3 +9,10 @@ jobs:
       - uses: actions/setup-node@v3
       - run: npm install --global mocha
       - run: mocha test.js
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+      - run: node index.js
+
