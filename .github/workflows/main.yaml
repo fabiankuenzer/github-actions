@@ -3,14 +3,14 @@ on: push
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
       - run: npm install --global mocha
       - run: mocha test.js
   run:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: test
     steps:
       - uses: actions/checkout@v2
