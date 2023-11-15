@@ -13,3 +13,12 @@ jobs:
         run: npm install --global mocha
       - name: 'Run tests'
         run: mocha test.js
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+      - name: 'Setup node'
+        uses: actions/setup-node@v4
+      - name: 'Run script'
+        run: node index.js
