@@ -5,21 +5,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: 'Checkout Repository'
         uses: actions/checkout@v4
-      - name: Setup node
+      - name: 'Setup node'
         uses: actions/setup-node@v4
-      - name: Install mocha
+      - name: 'Install mocha'
         run: npm install --global mocha
-      - name: Run tests
+      - name: 'Run tests'
         run: mocha test.js
-  run:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Setup node
-        uses: actions/setup-node@v4
-      - name: Run index.js
-        run: node index.js
